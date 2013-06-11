@@ -1,0 +1,40 @@
+{
+  "name": "docpad-plugin-geturl",
+  "version": "0.1.0",
+  "description": "Adds getUrl function for retreiving absolute path",
+  "homepage": "https://github.com/hypercubed/docpad-plugin-geturl",
+  "keywords": [
+    "docpad",
+    "docpad-plugin",
+    "plugin",
+    "absolute url"
+  ],
+  "author": "J. Harshbarger (https://github.com/hypercubed)",
+  "maintainers": [
+    "J. Harshbarger (https://github.com/hypercubed)"
+  ],
+  "contributors": [
+    "J. Harshbarger (https://github.com/hypercubed)",
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+  ],
+  "bugs": {
+    "url": "https://github.com/hypercubed/docpad-plugin-geturl/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hypercubed/docpad-plugin-geturl.git"
+  },
+  "engines": {
+    "node": ">=0.8",
+    "docpad": ">=6"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "coffee-script": "~1.6.2",
+    "docpad-plugin-eco": "~2.0.2"
+  },
+  "main": "./out/geturl.plugin.js",
+  "scripts": {
+    "test": "node ./out/geturl.test.js"
+  }
+}

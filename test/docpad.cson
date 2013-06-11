@@ -1,0 +1,5 @@
+{
+	templateData:
+		site:
+			url: 'http://localhost:9778'
+}
