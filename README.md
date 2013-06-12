@@ -1,6 +1,39 @@
 # Get Url Plugin for [DocPad](http://docpad.org)
 
-Take a href URL and an optional base URL and resolve them as a browser would for an anchor tag. See examples below.
+Take a href URL and an optional base URL and resolve them as a browser would for an anchor tag. Useful for calculating URLs relative to @site.url. See examples below.
+
+## Install (pending)
+
+```
+npm install --save docpad-plugin-geturl
+```
+
+## Install for testing
+
+```
+git clone https://github.com/Hypercubed/docpad-plugin-geturl.git
+cd docpad-plugin-geturl
+npm install
+make compile
+```
+
+## Test
+
+```
+make test
+```
+
+## Configuration
+
+Requires a @site.url:
+
+```
+# ...
+  templateData:
+		site:
+			url: 'http://localhost:9778'
+# ...
+```
 
 ## Examples
 
@@ -43,3 +76,8 @@ Take a href URL and an optional base URL and resolve them as a browser would for
 | Call  									| Returned							|
 | ---										| ---								|
 | @getUrl(@getCollection('documents'))	| http://localhost:9778/sub/documents.md,http://localhost:9778/document.md |
+
+
+## License
+Licensed under the incredibly [permissive](http://en.wikipedia.org/wiki/Permissive_free_software_licence) [MIT License](http://creativecommons.org/licenses/MIT/)
+<br/>Copyright &copy; 2013+ J. Harshbarger
