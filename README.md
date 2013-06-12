@@ -1,5 +1,7 @@
 # Get Url Plugin for [DocPad](http://docpad.org)
 
+Take a a href URL and an optional base URL and resolve them as a browser would for an anchor tag. See examples below.
+
 ## Examples
 
 ### Absolute
