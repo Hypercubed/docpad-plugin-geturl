@@ -1,7 +1,0 @@
-this is our **document!**
-
-<%= @getUrl('/') %>
-<%= @getUrl('/test') %>
-<%= @getUrl('test') %>
-<%= @getUrl('//test') %>
-<%= @getUrl('http://test') %>

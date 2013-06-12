@@ -1,3 +1,5 @@
+url = require('url')
+
 module.exports = (BasePlugin) ->
 
 	class getUrlPlugin extends BasePlugin
@@ -8,21 +10,21 @@ module.exports = (BasePlugin) ->
 		extendTemplateData: ({templateData}) ->
 		
 			# Apply
-			templateData.getUrl = (_, site) ->
-				site = site || @site.url
+			templateData.getUrl = (to, from) ->
+				from = from || url.resolve(@site.url, @document.url)
 
-				if (typeof _ == "string")
-					if (_[0] == "/" && _[1] != "/")
-						return site+_
-					return _
+				if (typeof to == "string")
+					return url.resolve(from,to)
 
-				if (typeof _ == "object")
-					if (_.url)
-						return @getUrl(_.url,site)
-					if (_.map)
+				if (typeof to == "object")
+					if (typeof to.url == "string")
+						return url.resolve(from, to.url)
+					if (typeof to.url == "function")
+						return url.resolve(from, to.get?('url'))
+					if (to.map)
 						_getUrl = arguments.callee
-						return _.map((d) ->
-							return _getUrl(d,site)
+						return to.map((d) ->
+							return _getUrl(d,from)
 						)
 
-				return _
+				return to

@@ -1,0 +1,31 @@
+# This is <%= @document.url %>
+
+## Absolute
+| Call										| Returned							|
+| ---										| ---								|
+| @getUrl('/')								| <%= @getUrl('/') %>				|
+| @getUrl('/test')							| <%= @getUrl('/test') %>			|
+| @getUrl('/test/')							| <%= @getUrl('/test/') %>			|
+| @getUrl('/test.html')						| <%= @getUrl('/test.html') %>		|
+
+## Relative
+| @getUrl('')								| <%= @getUrl('') %>				|
+| @getUrl('test.html')						| <%= @getUrl('test.html') %> 		|
+| @getUrl('../test.html')					| <%= @getUrl('../test.html') %> 	|
+
+## External
+| @getUrl('//test.com')						| <%= @getUrl('//test.com') %> 			|
+| @getUrl('http://test.com')				| <%= @getUrl('http://test.com') %>		|
+| @getUrl('https://test.com')				| <%= @getUrl('https://test.com') %>		|
+| @getUrl('test.html', 'https://test.com')				| <%= @getUrl('test.html', 'https://test.com') %>		|
+| @getUrl('../test.html', 'https://test.com/sub/')				| <%= @getUrl('../test.html', 'https://test.com/sub/') %>		|
+
+## Objects
+| @getUrl(@document)						| <%= @getUrl(@document) %>				|
+
+## Arrays
+| @getUrl(['/', '/test', 'test'])	| <%= @getUrl(['/', '/test', 'test']) %>	|
+| @getBlock('styles').add(@getUrl(@site.styles)).toHTML() | <%= @getBlock('styles').add(@getUrl(@site.styles)).toHTML() %> |
+
+## Arrays of objects
+| @getUrl(@getCollection('documents'))	| <%= @getUrl(@getCollection('documents')) %> |

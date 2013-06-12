@@ -1,6 +1,4 @@
-# Get Url Plugin for [DocPad](http://docpad.org)
-
-=== Examples
+# This is /document.md
 
 ## Absolute
 | Call										| Returned							|

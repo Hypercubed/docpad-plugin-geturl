@@ -2,4 +2,5 @@
 	templateData:
 		site:
 			url: 'http://localhost:9778'
+			styles: ['/root_style.css', 'sub_style.css']
 }
