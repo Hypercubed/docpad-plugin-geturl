@@ -2,7 +2,7 @@
 
 Take a href URL and an optional base URL and resolve them as a browser would for an anchor tag. Useful for calculating URLs relative to @site.url. See examples below.
 
-## Install (pending)
+## Install
 
 ```
 npm install --save docpad-plugin-geturl
