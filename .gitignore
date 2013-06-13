@@ -14,5 +14,7 @@ results
 node_modules
 npm-debug.log
 
+.c9revisions/
+
 test/out/
 out/
