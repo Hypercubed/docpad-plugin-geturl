@@ -8,5 +8,8 @@ compile:
 
 test: compile
 	npm test
+	
+rebase: 
+	cp -r ./test/out/* ./test/out-expected/
 
-.PHONY: dev compile test
+.PHONY: dev compile test rebase

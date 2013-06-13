@@ -22,9 +22,8 @@ module.exports = (BasePlugin) ->
 					if (typeof to.url == "function")
 						return url.resolve(from, to.get?('url'))
 					if (to.map)
-						_getUrl = arguments.callee
 						return to.map((d) ->
-							return _getUrl(d,from)
+							return templateData.getUrl(d,from)
 						)
 
 				return to
