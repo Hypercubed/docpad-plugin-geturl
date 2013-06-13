@@ -6,7 +6,7 @@ module.exports = (BasePlugin) ->
 		name: 'geturl'
 
 		# Extend Template Data
-		# Inject our partial methods
+		# Inject our helper method
 		extendTemplateData: ({templateData}) ->
 		
 			# Apply
