@@ -31,7 +31,10 @@
   "dependencies": {},
   "devDependencies": {
     "coffee-script": "~1.6.2",
-    "docpad-plugin-eco": "~2.0.2"
+    "docpad-plugin-eco": "~2.0.2",
+    "joe": "~1.2.0",
+    "joe-reporter-console": "~1.2.1",
+    "chai": "~1.6.1"
   },
   "main": "./out/geturl.plugin.js",
   "scripts": {

@@ -1,4 +1,5 @@
-# This is <%= @document.url %>
+# @document.url = <%= @document.url %>
+# @site.url = <%= @site.url %>
 
 ## Absolute URLs using @site.url
 | Call										| Returned							|

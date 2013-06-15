@@ -8,19 +8,28 @@ module.exports = (BasePlugin) ->
 		# Extend Template Data
 		# Inject our helper method
 		extendTemplateData: ({templateData}) ->
+			dconfig = @docpad.getConfig()
+			
+			dconfig.plugins or= {}
+			config = dconfig.plugins.geturl or= {}
+			
+			config.url or= dconfig.templateData.site.url
+			config.basepath or= url.parse(config.url).pathname
 		
 			# Apply
 			templateData.getUrl = (to, from) ->
-				from = from || url.resolve(@site.url, @document.url)
+				from = from || config.url+@document.url
 
 				if (typeof to == "string")
+					if (to[0] == "/" && to[1] != "/")
+						to = config.url+to
 					return url.resolve(from,to)
 
 				if (typeof to == "object")
 					if (typeof to.url == "string")
-						return url.resolve(from, to.url)
+						return templateData.getUrl(to.url, from)
 					if (typeof to.url == "function")
-						return url.resolve(from, to.get?('url'))
+						return templateData.getUrl(to.get?('url'), from)
 					if (to.map)
 						return to.map((d) ->
 							return templateData.getUrl(d,from)

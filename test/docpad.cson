@@ -1,6 +1,6 @@
 {
 	templateData:
 		site:
-			url: 'http://localhost:9778'
+			url: 'http://localhost:9778/base'
 			styles: ['/root_style.css', 'sub_style.css']
 }
