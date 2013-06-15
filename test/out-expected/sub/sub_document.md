@@ -1,19 +1,20 @@
-# This is /sub/sub_document.md
+# @document.url = /sub/sub_document.md
+# @site.url = http://localhost:9778/base
 
 ## Absolute URLs using @site.url
 | Call										| Returned							|
 | ---										| ---								|
-| @getUrl('/')								| http://localhost:9778/				|
-| @getUrl('/test')							| http://localhost:9778/test			|
-| @getUrl('/test/')							| http://localhost:9778/test/			|
-| @getUrl('/test.html')						| http://localhost:9778/test.html		|
+| @getUrl('/')								| http://localhost:9778/base/				|
+| @getUrl('/test')							| http://localhost:9778/base/test			|
+| @getUrl('/test/')							| http://localhost:9778/base/test/			|
+| @getUrl('/test.html')						| http://localhost:9778/base/test.html		|
 
 ## Relative to current @document.url
 | Call										| Returned							|
 | ---										| ---								|
-| @getUrl('')								| http://localhost:9778/sub/sub_document.md				|
-| @getUrl('test.html')						| http://localhost:9778/sub/test.html 		|
-| @getUrl('../test.html')					| http://localhost:9778/test.html 	|
+| @getUrl('')								| http://localhost:9778/base/sub/sub_document.md				|
+| @getUrl('test.html')						| http://localhost:9778/base/sub/test.html 		|
+| @getUrl('../test.html')					| http://localhost:9778/base/test.html 	|
 
 ## Explicit site url
 | Call										| Returned							|
@@ -27,15 +28,15 @@
 ## Works on objects
 | Call										| Returned							|
 | ---										| ---								|
-| @getUrl(@document)						| http://localhost:9778/sub/sub_document.md				|
+| @getUrl(@document)						| http://localhost:9778/base/sub/sub_document.md				|
 
 ## Works on arrays
 | Call										| Returned							|
 | ---										| ---								|
-| @getUrl(['/', '/test', 'test'])	| http://localhost:9778/,http://localhost:9778/test,http://localhost:9778/sub/test	|
-| @getBlock('styles').add(@getUrl(@site.styles)).toHTML() | &lt;link  rel=&quot;stylesheet&quot; href=&quot;http://localhost:9778/root_style.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;http://localhost:9778/sub/sub_style.css&quot; /&gt; |
+| @getUrl(['/', '/test', 'test'])	| http://localhost:9778/base/,http://localhost:9778/base/test,http://localhost:9778/base/sub/test	|
+| @getBlock('styles').add(@getUrl(@site.styles)).toHTML() | &lt;link  rel=&quot;stylesheet&quot; href=&quot;http://localhost:9778/base/root_style.css&quot; /&gt;&lt;link  rel=&quot;stylesheet&quot; href=&quot;http://localhost:9778/base/sub/sub_style.css&quot; /&gt; |
 
 ## Works on arrays of objects
 | Call										| Returned							|
 | ---										| ---								|
-| @getUrl(@getCollection('documents'))	| http://localhost:9778/root_document.md,http://localhost:9778/sub/sub_document.md |
+| @getUrl(@getCollection('documents'))	| http://localhost:9778/base/root_document.md,http://localhost:9778/base/sub/sub_document.md |
