@@ -14,7 +14,7 @@ module.exports = (BasePlugin) ->
 			config = dconfig.plugins.geturl or= {}
 			
 			config.url or= dconfig.templateData.site.url
-			config.basepath or= url.parse(config.url).pathname
+			config.url or= ''
 		
 			# Apply
 			templateData.getUrl = (to, from) ->
